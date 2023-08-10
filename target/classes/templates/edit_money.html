@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Money</title>
+</head>
+<body>
+<div align="center">
+    <h1>Добавить валюту</h1>
+    <br/>
+    <form action="#" th:action="@{/save}" th:object="${money}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>ID валюты:</td>
+                <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+            </tr>
+            <tr>
+                <td>Количество:</td>
+                <td><input type="text" th:field="*{moneyCount}" /></td>
+            </tr>
+            <tr>
+                <td>Наименование:</td>
+                <td><input type="text" th:field="*{moneyName}" /></td>
+            </tr>
+            <tr>
+                <td>Цена:</td>
+                <td><input type="text" th:field="*{price}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Сохранить</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
