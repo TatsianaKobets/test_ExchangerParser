@@ -6,7 +6,6 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
   <changeSet id="5" author="tatsiana_kobets">
-
     <createTable tableName="users_roles">
       <column name="user_id" type="int">
         <constraints nullable="true"/>
