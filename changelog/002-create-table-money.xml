@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+ <changeSet id="2" author="tatsiana_kobets">
+  <!-- Сначала создаем таблицу -->
+  <createTable tableName="money">
+   <column name="id" type="bigint">
+    <constraints primaryKey="true"/>
+   </column>
+   <column name="money_count" type="varchar(255)">
+    <constraints nullable="true"/>
+   </column>
+   <column name="money_name" type="varchar(255)">
+    <constraints nullable="true"/>
+   </column>
+   <column name="price" type="varchar(255)">
+    <constraints nullable="true"/>
+   </column>
+  </createTable>
+
+  <!-- Вставляем данные -->
+  <insert tableName="money">
+   <column name="id" value="12"/>
+   <column name="money_count" value="1"/>
+   <column name="money_name" value="Доллар"/>
+   <column name="price" value="2,9185"/>
+  </insert>
+  <insert tableName="money">
+   <column name="id" value="13"/>
+   <column name="money_count" value="1"/>
+   <column name="money_name" value="Евро"/>
+   <column name="price" value="3,1327"/>
+  </insert>
+  <insert tableName="money">
+   <column name="id" value="14"/>
+   <column name="money_count" value="100"/>
+   <column name="money_name" value="Российских"/>
+   <column name="price" value="3,6632"/>
+  </insert>
+ </changeSet>
+</databaseChangeLog>

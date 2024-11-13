@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+  <changeSet id="5" author="tatsiana_kobets">
+
+    <createTable tableName="users_roles">
+      <column name="user_id" type="int">
+        <constraints nullable="true"/>
+      </column>
+      <column name="role_id" type="int">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="users_roles"
+      baseColumnNames="user_id"
+      referencedTableName="users"
+      referencedColumnNames="user_id"
+      constraintName="user_fk"/>
+    <addForeignKeyConstraint baseTableName="users_roles"
+      baseColumnNames="role_id"
+      referencedTableName="roles"
+      referencedColumnNames="role_id"
+      constraintName="role_fk"/>
+
+    <insert tableName="users_roles">
+      <column name="user_id" value="1"/>
+      <column name="role_id" value="1"/>
+    </insert>
+    <insert tableName="users_roles">
+      <column name="user_id" value="2"/>
+      <column name="role_id" value="2"/>
+    </insert>
+    <insert tableName="users_roles">
+      <column name="user_id" value="3"/>
+      <column name="role_id" value="3"/>
+    </insert>
+    <insert tableName="users_roles">
+      <column name="user_id" value="4"/>
+      <column name="role_id" value="4"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  liquibase:
+    container_name: liquibase_parser
+    image: liquibase/liquibase
+    command: update --changelog-file=changelog.xml --username=postgres --password=password --url=jdbc:postgresql://postgres:5432/postgres
+    volumes:
+      - ./config/changelog.xml:/liquibase/changelog.xml
+      - ./changelog:/liquibase/changelog
+    networks:
+      - pg-network
+networks:
+  pg-network:

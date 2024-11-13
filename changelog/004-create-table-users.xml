@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+  <changeSet id="4" author="tatsiana_kobets">
+
+    <createTable tableName="users">
+      <column name="user_id" type="serial">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="username" type="varchar(45)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="password" type="varchar(64)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="enabled" type="tinyint">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+    <insert tableName="users">
+      <column name="user_id" value="1"/>
+      <column name="username" value="user"/>
+      <column name="password" value="$2a$10$LOEClHalcImX.f5HXQdPju/tW4Q10utOCbtpdQJIpBLf0ZuspCWiC"/>
+      <column name="enabled" value="1"/>
+    </insert>
+    <insert tableName="users">
+      <column name="user_id" value="2"/>
+      <column name="username" value="admin"/>
+      <column name="password" value="$2a$10$qoM5rmcsQdPTskTkEfU8cO89ZLb1PH9JVl5.BbvRiqhJ7rTRPdtqm"/>
+      <column name="enabled" value="1"/>
+    </insert>
+    <insert tableName="users">
+      <column name="user_id" value="3"/>
+      <column name="username" value="editor"/>
+      <column name="password" value="$2a$10$Z7MRzguUteVOlcspY3EzV.f1kAQRMqe1odIDR4OxFfxhyByttmOQa"/>
+      <column name="enabled" value="1"/>
+    </insert>
+    <insert tableName="users">
+      <column name="user_id" value="4"/>
+      <column name="username" value="creator"/>
+      <column name="password" value="$2a$10$NYRpqLFIryIqD857x2lU2OxteC69/tKfGmw44aNykbS5LkEfYueo2"/>
+      <column name="enabled" value="1"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
